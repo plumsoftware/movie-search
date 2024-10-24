@@ -3,7 +3,7 @@ name: run android unit tests
 on:
   pull_request:
     paths:
-      - .github/workflows/android unit test.yml
+      - .github/workflows/run android unit tests.yml
       - 'app/**'
 
 jobs:
