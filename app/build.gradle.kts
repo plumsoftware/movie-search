@@ -72,6 +72,9 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.fragment.compose)
 
+    //Koin
+    implementation(libs.koin.android)
+
     //Modules
     implementation(project(path = ":data"))
 }

@@ -24,6 +24,9 @@ moshiKotlin = "1.15.1"
 retrofit = "2.11.0"
 converterMoshi = "2.11.0"
 
+#DI
+koinAndroid = "4.0.0"
+
 [libraries]
 #Auto generated
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -54,6 +57,9 @@ moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
 moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
+
+#DI
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
 
 
 [plugins]
