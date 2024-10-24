@@ -71,4 +71,7 @@ dependencies {
     //Fragment
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.fragment.compose)
+
+    //Modules
+    implementation(project(path = ":data"))
 }

@@ -1,7 +1,7 @@
 [versions]
 #Auto generated
 agp = "8.6.0"
-kotlin = "1.9.0"
+kotlin = "1.9.23"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -13,6 +13,16 @@ composeBom = "2024.04.01"
 #Fragment
 fragmentKtx = "1.8.3"
 fragmentCompose = "1.8.3"
+
+#Matrial
+appcompat = "1.7.0"
+material = "1.12.0"
+
+#Retrofit&Moshi
+moshi = "1.15.1"
+moshiKotlin = "1.15.1"
+retrofit = "2.11.0"
+converterMoshi = "2.11.0"
 
 [libraries]
 #Auto generated
@@ -34,8 +44,20 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 #Fragment
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-fragment-compose = { module = "androidx.fragment:fragment-compose", version.ref = "fragmentCompose" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+#Material
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+#Retrofit
+moshi = { module = "com.squareup.moshi:moshi", version.ref = "moshi" }
+moshi-kotlin = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshiKotlin" }
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 
