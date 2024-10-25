@@ -75,6 +75,10 @@ dependencies {
     //Koin
     implementation(libs.koin.android)
 
+    //Coil
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
+
     //Modules
     implementation(project(path = ":data"))
 }

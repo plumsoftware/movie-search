@@ -27,6 +27,9 @@ converterMoshi = "2.11.0"
 #DI
 koinAndroid = "4.0.0"
 
+#Coil
+coilCompose = "3.0.0-rc01"
+
 [libraries]
 #Auto generated
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -60,6 +63,10 @@ converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.r
 
 #DI
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
+
+#Coil
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
+coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilCompose" }
 
 
 [plugins]

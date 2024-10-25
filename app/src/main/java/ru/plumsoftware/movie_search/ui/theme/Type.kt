@@ -7,6 +7,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
 val appTypography = Typography(
+    titleLarge = TextStyle(
+        fontStyle = FontStyle.Normal,
+        fontWeight = FontWeight.W700,
+        fontSize = 16.sp,
+        letterSpacing = 0.1.sp
+    ),
+    titleMedium = TextStyle(
+        fontStyle = FontStyle.Normal,
+        fontWeight = FontWeight.W500,
+        fontSize = 18.sp,
+        letterSpacing = 0.15.sp
+    ),
     bodyMedium = TextStyle(
         fontWeight = FontWeight.Normal,
         fontStyle = FontStyle.Normal,
