@@ -20,7 +20,7 @@ val appTypography = Typography(
         letterSpacing = 0.15.sp
     ),
     bodyMedium = TextStyle(
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.W400,
         fontStyle = FontStyle.Normal,
         fontSize = 16.sp,
         letterSpacing = 0.05.sp

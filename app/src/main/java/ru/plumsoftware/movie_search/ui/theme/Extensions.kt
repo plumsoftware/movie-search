@@ -15,4 +15,9 @@ object Extensions {
         val noPreviewBackAlpha = 0.2f
         val noPreviewTintAlpha = 0.35f
     }
+
+    object Padding {
+        val mediumHor = 16.dp
+        val mediumVer = 10.dp
+    }
 }
