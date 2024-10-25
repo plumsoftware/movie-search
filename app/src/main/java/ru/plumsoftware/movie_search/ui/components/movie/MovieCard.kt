@@ -1,4 +1,4 @@
-package ru.plumsoftware.movie_search.ui.components
+package ru.plumsoftware.movie_search.ui.components.movie
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
@@ -36,7 +36,6 @@ fun MovieCard(modifier: Modifier = Modifier, movie: Movie, onClick: (Movie) -> U
 
     Card(
         modifier = Modifier
-            .fillMaxWidth()
             .wrapContentHeight()
             .then(modifier),
         colors = CardDefaults.cardColors(

@@ -2,10 +2,9 @@ package ru.plumsoftware.movie_search.ui.components.genre
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -28,20 +27,18 @@ fun GenresList(onGenreClick: (String) -> Unit, initialValue: Int = -1) {
     val genresFromResources = stringArrayResource(R.array.genres)
     var selectedIndex by remember { mutableIntStateOf(initialValue) }
 
-    LazyColumn {
-        item {
-            Text(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(
-                        horizontal = Extensions.Padding.mediumHor,
-                        vertical = Extensions.Padding.mediumVer
-                    ),
-                text = stringResource(R.string.title_g),
-                style = MaterialTheme.typography.headlineLarge
-            )
-        }
-        itemsIndexed(genresFromResources) { index, item ->
+    Column {
+        Text(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+                    horizontal = Extensions.Padding.mediumHor,
+                    vertical = Extensions.Padding.mediumVer
+                ),
+            text = stringResource(R.string.title_g),
+            style = MaterialTheme.typography.headlineLarge
+        )
+        genresFromResources.forEachIndexed { index, item ->
             GenreItem(
                 title = item,
                 isSelected = selectedIndex == index,
@@ -81,7 +78,8 @@ private fun GenresListPreviewDark() {
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true, showSystemUi = true,
+@Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true, showSystemUi = true,
     device = "spec:parent=pixel_5,orientation=landscape"
 )
 private fun GenresListPreviewLandscapeDark() {
