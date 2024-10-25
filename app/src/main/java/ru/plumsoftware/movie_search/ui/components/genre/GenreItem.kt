@@ -1,4 +1,4 @@
-package ru.plumsoftware.movie_search.ui.components
+package ru.plumsoftware.movie_search.ui.components.genre
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
