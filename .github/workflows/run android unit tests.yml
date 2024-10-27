@@ -1,10 +1,10 @@
-name: run data unit tests.yml
+name: run android unit tests.yml
 
 on:
   pull_request:
     paths:
-      - .github/workflows/run data layer unit tests.yml
-      - 'data/**'
+      - .github/workflows/run android unit tests.yml
+      - 'app/**'
 
 jobs:
   test:
@@ -20,4 +20,4 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
       - name: Run unit tests
-        run: ./gradlew :data:testDebugUnitTest
+        run: ./gradlew :app:testDebugUnitTest

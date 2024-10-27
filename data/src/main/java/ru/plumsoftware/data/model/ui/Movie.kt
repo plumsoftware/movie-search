@@ -8,6 +8,18 @@ data class Movie(
     val genres: Array<String>
 ) {
 
+    companion object {
+        fun empty() : Movie {
+            return Movie(
+                preview = null,
+                name = "",
+                description = "",
+                localizedName = "",
+                genres = emptyArray()
+            )
+        }
+    }
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false

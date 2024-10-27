@@ -72,8 +72,19 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.fragment.compose)
 
+//    //Navigation
+//    implementation(libs.androidx.navigation.fragment.ktx)
+//    implementation(libs.androidx.navigation.ui.ktx)
+
     //Koin
     implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+    implementation(libs.koin.core)
+
+    //Koin tests
+    implementation(libs.koin.test)
+    implementation(libs.koin.test.junit4)
+    implementation(libs.koin.android.test)
 
     //Coil
     implementation(libs.coil.compose)

@@ -21,11 +21,13 @@ material = "1.12.0"
 #Retrofit&Moshi
 moshi = "1.15.1"
 moshiKotlin = "1.15.1"
+navigationFragmentKtx = "2.8.3"
+navigationUiKtx = "2.8.3"
 retrofit = "2.11.0"
 converterMoshi = "2.11.0"
 
 #DI
-koinAndroid = "4.0.0"
+koin = "4.0.0"
 
 #Coil
 coilCompose = "3.0.0-rc01"
@@ -33,6 +35,8 @@ coilCompose = "3.0.0-rc01"
 [libraries]
 #Auto generated
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -62,7 +66,12 @@ retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit
 converter-moshi = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "converterMoshi" }
 
 #DI
-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koin" }
+koin-android-test = { module = "io.insert-koin:koin-android-test", version.ref = "koin" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
 
 #Coil
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
