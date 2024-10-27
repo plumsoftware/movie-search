@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
@@ -26,7 +27,7 @@ import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun MovieList(movieList: List<Movie>) {
+fun MovieList(movieList: List<Movie>, onMovieClick: (Movie) -> Unit = {}) {
     val padding = PaddingValues(
         horizontal = Extensions.Padding.mediumHor,
         vertical = Extensions.Padding.mediumVer
@@ -47,7 +48,7 @@ fun MovieList(movieList: List<Movie>) {
             modifier = Modifier
                 .padding(padding)
                 .fillMaxWidth()
-                .wrapContentHeight(),
+                .fillMaxHeight(),
             verticalArrangement = Arrangement.spacedBy(
                 space = Extensions.Space.medium,
                 alignment = Alignment.CenterVertically
@@ -63,7 +64,9 @@ fun MovieList(movieList: List<Movie>) {
                     movie = item,
                     modifier = Modifier
                         .weight(1.0f),
-                    onClick = {}
+                    onClick = {
+                        onMovieClick(item)
+                    }
                 )
             }
         }

@@ -47,7 +47,8 @@ fun GenresList(onGenreClick: (String) -> Unit, initialValue: Int = -1) {
                         -1
                     else
                         index
-                    onGenreClick.invoke(item)
+                    val genre = if (selectedIndex == -1) "" else item
+                    onGenreClick.invoke(genre)
                 }
             )
         }
