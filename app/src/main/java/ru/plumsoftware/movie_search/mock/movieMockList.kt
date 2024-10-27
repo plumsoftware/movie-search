@@ -1,6 +1,6 @@
 package ru.plumsoftware.movie_search.mock
 
-import ru.plumsoftware.movie_search.ui.model.Movie
+import ru.plumsoftware.data.model.ui.Movie
 
 
 internal fun getMockMovieList(): List<Movie> {

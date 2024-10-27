@@ -20,7 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import ru.plumsoftware.movie_search.R
 import ru.plumsoftware.movie_search.mock.getMockMovieList
-import ru.plumsoftware.movie_search.ui.model.Movie
+import ru.plumsoftware.data.model.ui.Movie
 import ru.plumsoftware.movie_search.ui.theme.Extensions
 import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
 

@@ -1,4 +1,4 @@
-package ru.plumsoftware.movie_search.ui.model
+package ru.plumsoftware.data.model.ui
 
 data class Movie(
     val preview: String?,

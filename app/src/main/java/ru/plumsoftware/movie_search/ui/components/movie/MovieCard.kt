@@ -25,7 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import coil3.compose.AsyncImage
 import ru.plumsoftware.movie_search.R
-import ru.plumsoftware.movie_search.ui.model.Movie
+import ru.plumsoftware.data.model.ui.Movie
 import ru.plumsoftware.movie_search.ui.theme.Extensions
 import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
 
