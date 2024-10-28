@@ -64,9 +64,9 @@ fun RowScope.MovieCard(modifier: Modifier = Modifier, movie: Movie, onClick: (Mo
             ) {
                 AsyncImage(
                     modifier = Modifier
-                        .clip(MaterialTheme.shapes.extraSmall)
                         .height(Extensions.Size.previewHeight)
-                        .fillMaxWidth(),
+                        .fillMaxWidth()
+                        .clip(MaterialTheme.shapes.extraSmall),
                     model = ImageRequest.Builder(LocalContext.current)
                         .data(movie.preview)
                         .build(),

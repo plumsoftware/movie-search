@@ -1,7 +1,6 @@
 package ru.plumsoftware.movie_search.ui.components
 
 import android.annotation.SuppressLint
-import androidx.annotation.StringRes
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -20,7 +19,7 @@ import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
 fun CenterTopAppBar(
     modifier: Modifier = Modifier,
     navIcon: @Composable () -> Unit = {},
-    @StringRes title: Int = R.string.main_screen_title
+    title: String = stringResource(id = R.string.main_screen_title)
 ) {
     val colors = TopAppBarDefaults.topAppBarColors(
         containerColor = MaterialTheme.colorScheme.primaryContainer
@@ -28,7 +27,7 @@ fun CenterTopAppBar(
     CenterAlignedTopAppBar(
         title = {
             Text(
-                text = stringResource(title),
+                text = title,
                 style = MaterialTheme.typography.titleMedium
             )
         },

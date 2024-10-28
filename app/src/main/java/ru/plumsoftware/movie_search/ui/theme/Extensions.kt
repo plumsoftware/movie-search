@@ -6,15 +6,12 @@ object Extensions {
     object Space {
         val small = 8.dp
         val medium = 16.dp
+        val large = 24.dp
     }
 
     object Size {
         val previewHeight = 270.dp
-    }
-
-    object Alpha {
-        val noPreviewBackAlpha = 0.2f
-        val noPreviewTintAlpha = 0.35f
+        val previewWidth = 132.dp
     }
 
     object Padding {
