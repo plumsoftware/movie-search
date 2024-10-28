@@ -1,5 +1,6 @@
 package ru.plumsoftware.movie_search.ui.screens.home
 
+import android.os.Bundle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
@@ -27,10 +28,14 @@ class HomeViewModel(private val filmsStorage: FilmsStorage) : ViewModel() {
         }
     }
 
-    fun selectMovie(movie: Movie) {
+    fun selectMovie(movie: Movie) : Bundle {
         state.update {
             it.copy(selectedMovie = movie)
         }
+        val bundle = Bundle().apply {
+            putParcelable("movie", movie)
+        }
+        return bundle
     }
 
     fun selectGenre(genre: String) {

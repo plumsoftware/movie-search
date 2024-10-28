@@ -1,24 +1,23 @@
 package ru.plumsoftware.data.model.ui
 
-data class Movie(
+import android.os.Parcel
+import android.os.Parcelable
+
+class Movie(
     val preview: String?,
     val name: String,
     val description: String,
     val localizedName: String,
     val genres: Array<String>
-) {
+) : Parcelable {
 
-    companion object {
-        fun empty() : Movie {
-            return Movie(
-                preview = null,
-                name = "",
-                description = "",
-                localizedName = "",
-                genres = emptyArray()
-            )
-        }
-    }
+    constructor(parcel: Parcel) : this(
+        parcel.readString(),
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.readString() ?: "",
+        parcel.createStringArray() ?: emptyArray()
+    )
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
@@ -42,5 +41,37 @@ data class Movie(
         result = 31 * result + localizedName.hashCode()
         result = 31 * result + genres.contentHashCode()
         return result
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(preview)
+        parcel.writeString(name)
+        parcel.writeString(description)
+        parcel.writeString(localizedName)
+        parcel.writeStringArray(genres)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<Movie> {
+        override fun createFromParcel(parcel: Parcel): Movie {
+            return Movie(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Movie?> {
+            return arrayOfNulls(size)
+        }
+
+        fun empty(): Movie {
+            return Movie(
+                preview = null,
+                name = "",
+                description = "",
+                localizedName = "",
+                genres = emptyArray()
+            )
+        }
     }
 }

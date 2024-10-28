@@ -71,7 +71,9 @@ private fun HomeScreenContent(activity: Activity) {
             }
 
             is ApiEither.Success -> {
-                LazyColumn(modifier = Modifier.fillMaxSize().padding(it)) {
+                LazyColumn(modifier = Modifier
+                    .fillMaxSize()
+                    .padding(it)) {
                     item {
                         GenresList(
                             onGenreClick = { genre ->
@@ -82,9 +84,11 @@ private fun HomeScreenContent(activity: Activity) {
                     item {
                         MovieList(
                             movieList = homeViewModel.filterList(apiEither.data),
-                            onMovieClick = { movie->
-                                homeViewModel.selectMovie(movie = movie)
-                                navController.navigate(R.id.aboutMovieFragment)
+                            onMovieClick = { movie ->
+                                navController.navigate(
+                                    R.id.aboutMovieFragment,
+                                    homeViewModel.selectMovie(movie = movie)
+                                )
                             }
                         )
                     }
