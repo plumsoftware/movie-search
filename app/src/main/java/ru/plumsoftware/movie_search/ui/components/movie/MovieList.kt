@@ -62,8 +62,6 @@ fun MovieList(movieList: List<Movie>, onMovieClick: (Movie) -> Unit = {}) {
             movieList.forEach { item ->
                 MovieCard(
                     movie = item,
-                    modifier = Modifier
-                        .weight(1.0f),
                     onClick = {
                         onMovieClick(item)
                     }

@@ -40,9 +40,13 @@ class HomeViewModel(private val filmsStorage: FilmsStorage) : ViewModel() {
     }
 
     fun filterList(list: List<Movie>): List<Movie> {
-        return if (state.value.genre.isEmpty())
+        val selectedGenre = state.value.genre.lowercase()
+        return if (selectedGenre.isEmpty()) {
             list
-        else
-            list.filter { it.genres.any { g -> g == state.value.genre } }
+        } else {
+            list.filter { movie ->
+                movie.genres.any { genre -> genre in selectedGenre }
+            }
+        }
     }
 }

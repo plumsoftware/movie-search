@@ -41,7 +41,7 @@ fun CenterTopAppBar(
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Preview
 @Composable
-fun CenterTopAppBarPreview() {
+private fun CenterTopAppBarPreview() {
     MovieSearchTheme {
         Scaffold(topBar = {CenterTopAppBar()}) {}
     }

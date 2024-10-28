@@ -5,6 +5,8 @@ import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.wrapContentHeight
@@ -31,10 +33,11 @@ import ru.plumsoftware.movie_search.ui.theme.Extensions
 import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
 
 @Composable
-fun MovieCard(modifier: Modifier = Modifier, movie: Movie, onClick: (Movie) -> Unit) {
+fun RowScope.MovieCard(modifier: Modifier = Modifier, movie: Movie, onClick: (Movie) -> Unit) {
     Card(
         modifier = Modifier
             .wrapContentHeight()
+            .weight(0.5f)
             .clip(MaterialTheme.shapes.extraSmall)
             .then(modifier),
         colors = CardDefaults.cardColors(
@@ -87,7 +90,7 @@ fun MovieCard(modifier: Modifier = Modifier, movie: Movie, onClick: (Movie) -> U
 private fun MovieCardPreviewLight() {
     MovieSearchTheme {
         Scaffold {
-            Column {
+            Row {
                 MovieCard(
                     movie = Movie(
                         preview = null,
@@ -109,7 +112,7 @@ private fun MovieCardPreviewLight() {
 private fun MovieCardPreviewDark() {
     MovieSearchTheme {
         Scaffold {
-            Column {
+            Row {
                 MovieCard(
                     movie = Movie(
                         preview = null,
@@ -135,7 +138,7 @@ private fun MovieCardPreviewDark() {
 private fun MovieCardPreviewDarkLandscape() {
     MovieSearchTheme {
         Scaffold {
-            Column {
+            Row {
                 MovieCard(
                     movie = Movie(
                         preview = null,

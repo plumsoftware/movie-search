@@ -8,4 +8,9 @@
         android:id="@+id/homeScreenFragment"
         android:name="ru.plumsoftware.movie_search.ui.screens.home.HomeScreenFragment"
         android:label="Home Screen" />
+
+    <fragment
+        android:id="@+id/aboutMovieFragment"
+        android:name="ru.plumsoftware.movie_search.ui.screens.about.AboutMovieFragment"
+        android:label="About movie Screen" />
 </navigation>

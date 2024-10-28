@@ -1,12 +1,12 @@
 package ru.plumsoftware.movie_search.ui.screens.home
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -23,6 +23,7 @@ import androidx.navigation.Navigation
 import org.koin.androidx.compose.koinViewModel
 import ru.plumsoftware.data.api.ApiEither
 import ru.plumsoftware.movie_search.R
+import ru.plumsoftware.movie_search.ui.components.CenterTopAppBar
 import ru.plumsoftware.movie_search.ui.components.genre.GenresList
 import ru.plumsoftware.movie_search.ui.components.movie.MovieList
 import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
@@ -43,7 +44,6 @@ class HomeScreenFragment : Fragment() {
     }
 }
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 private fun HomeScreenContent(activity: Activity) {
     val homeViewModel: HomeViewModel = koinViewModel()
@@ -54,7 +54,11 @@ private fun HomeScreenContent(activity: Activity) {
         homeViewModel.loadFilms()
     }
 
-    Scaffold {
+    Scaffold(
+        topBar = {
+            CenterTopAppBar()
+        }
+    ) {
         when (val apiEither = state.value.apiEither) {
             is ApiEither.Error -> {
 
@@ -67,19 +71,20 @@ private fun HomeScreenContent(activity: Activity) {
             }
 
             is ApiEither.Success -> {
-                LazyColumn(modifier = Modifier.fillMaxSize()) {
+                LazyColumn(modifier = Modifier.fillMaxSize().padding(it)) {
                     item {
                         GenresList(
-                            onGenreClick = {
-                                homeViewModel.selectGenre(it)
+                            onGenreClick = { genre ->
+                                homeViewModel.selectGenre(genre)
                             }
                         )
                     }
                     item {
                         MovieList(
                             movieList = homeViewModel.filterList(apiEither.data),
-                            onMovieClick = {
-                                homeViewModel.selectMovie(movie = it)
+                            onMovieClick = { movie->
+                                homeViewModel.selectMovie(movie = movie)
+                                navController.navigate(R.id.aboutMovieFragment)
                             }
                         )
                     }
