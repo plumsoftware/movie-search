@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_g">Жанры</string>
+    <array name="genres">
+        <item>Биография</item>
+        <item>Боевик</item>
+        <item>Детектив</item>
+        <item>Драма</item>
+        <item>Комедия</item>
+        <item>Мюзикл</item>
+        <item>Приключения</item>
+        <item>Триллер</item>
+        <item>Ужасы</item>
+        <item>Фантастика</item>
+    </array>
+</resources>

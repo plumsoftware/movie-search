@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_navigation"
+    app:startDestination="@id/homeScreenFragment">
+
+    <fragment
+        android:id="@+id/homeScreenFragment"
+        android:name="ru.plumsoftware.movie_search.ui.screens.home.HomeScreenFragment"
+        android:label="Home Screen" />
+
+    <fragment
+        android:id="@+id/aboutMovieFragment"
+        android:name="ru.plumsoftware.movie_search.ui.screens.about.AboutMovieFragment"
+        android:label="About movie Screen" />
+</navigation>

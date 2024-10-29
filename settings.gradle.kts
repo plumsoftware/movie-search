@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Поиск кино"
 include(":app")
+include(":data")
