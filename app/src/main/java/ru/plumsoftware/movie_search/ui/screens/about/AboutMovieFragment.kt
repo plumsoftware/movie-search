@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ExperimentalLayoutApi
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -33,6 +35,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
@@ -44,6 +47,7 @@ import ru.plumsoftware.movie_search.R
 import ru.plumsoftware.movie_search.ui.components.CenterTopAppBar
 import ru.plumsoftware.movie_search.ui.theme.Extensions
 import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
+import ru.plumsoftware.movie_search.ui.theme.kinopoiskColor
 
 class AboutMovieFragment : Fragment() {
 
@@ -74,6 +78,7 @@ class AboutMovieFragment : Fragment() {
         aboutMovieViewModel.setMovie(movie)
     }
 
+    @OptIn(ExperimentalLayoutApi::class)
     @Composable
     private fun AboutMovieContent(activity: Activity) {
 
@@ -114,7 +119,7 @@ class AboutMovieFragment : Fragment() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 item {
-                    Card (
+                    Card(
                         modifier = Modifier
                             .wrapContentSize()
                             .clip(MaterialTheme.shapes.extraSmall),
@@ -152,7 +157,44 @@ class AboutMovieFragment : Fragment() {
                             textAlign = TextAlign.Start,
                             softWrap = true
                         )
+                        Text(
+                            text = "${state.value.selectedMovie.genres.joinToString()}, ${state.value.selectedMovie.year}",
+                            style = MaterialTheme.typography.bodyMedium,
+                            color = MaterialTheme.colorScheme.onBackground.copy(alpha = Extensions.Alpha.hintAlpha),
+                            textAlign = TextAlign.Start,
+                            softWrap = true
+                        )
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(
+                                space = Extensions.Space.small,
+                                alignment = Alignment.Start
+                            )
+                        ) {
+                            Text(
+                                text = "${state.value.selectedMovie.rating}",
+                                style = MaterialTheme.typography.labelLarge,
+                                color = kinopoiskColor,
+                                textAlign = TextAlign.Start,
+                                softWrap = true
+                            )
+                            Text(
+                                text = stringResource(R.string.konopoisk),
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = kinopoiskColor,
+                                textAlign = TextAlign.Start,
+                                softWrap = true
+                            )
+                        }
                     }
+                }
+                item {
+                    Text(
+                        text = state.value.selectedMovie.description,
+                        style = MaterialTheme.typography.bodyMedium,
+                        textAlign = TextAlign.Start,
+                        softWrap = true
+                    )
                 }
             }
         }

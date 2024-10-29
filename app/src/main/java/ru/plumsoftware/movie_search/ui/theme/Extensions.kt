@@ -14,6 +14,10 @@ object Extensions {
         val previewWidth = 132.dp
     }
 
+    object Alpha {
+        val hintAlpha = 0.5f
+    }
+
     object Padding {
         val mediumHor = 16.dp
         val mediumVer = 10.dp

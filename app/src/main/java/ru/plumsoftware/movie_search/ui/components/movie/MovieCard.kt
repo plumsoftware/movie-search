@@ -96,6 +96,8 @@ private fun MovieCardPreviewLight() {
                         preview = null,
                         name = "Some name",
                         genres = arrayOf("хи-хи"),
+                        year = 2024,
+                        rating = 5.5f,
                         description = "",
                         localizedName = ""
                     ),
@@ -118,6 +120,8 @@ private fun MovieCardPreviewDark() {
                         preview = null,
                         name = "Some name",
                         genres = arrayOf("хи-хи"),
+                        year = 2024,
+                        rating = 5.5f,
                         description = "",
                         localizedName = ""
                     ),
@@ -144,6 +148,8 @@ private fun MovieCardPreviewDarkLandscape() {
                         preview = null,
                         name = "Some name",
                         genres = arrayOf("хи-хи"),
+                        year = 2024,
+                        rating = 5.5f,
                         description = "",
                         localizedName = ""
                     ),

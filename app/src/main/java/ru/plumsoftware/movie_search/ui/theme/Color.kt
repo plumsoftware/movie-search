@@ -73,3 +73,5 @@ val surfaceContainerLowDark = Color(0xFF201B13)
 val surfaceContainerDark = Color(0xFF241F17)
 val surfaceContainerHighDark = Color(0xFF2E2921)
 val surfaceContainerHighestDark = Color(0xFF3A342B)
+
+val kinopoiskColor = Color(0xFF0E3165)

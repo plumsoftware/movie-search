@@ -2,4 +2,6 @@
     <string name="app_name">Поиск кино</string>
 
     <string name="main_screen_title">Фильмы</string>
+
+    <string name="konopoisk">КиноПоиск</string>
 </resources>

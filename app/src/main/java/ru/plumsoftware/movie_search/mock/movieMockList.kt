@@ -12,6 +12,8 @@ internal fun getMockMovieList(): List<Movie> {
                 name = "Some name",
                 description = "Some description",
                 localizedName = "Some localized name",
+                year = 2024,
+                rating = 5.5f,
                 genres = arrayOf("Some genre")
             )
         )

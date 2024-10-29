@@ -22,7 +22,7 @@ fun CenterTopAppBar(
     title: String = stringResource(id = R.string.main_screen_title)
 ) {
     val colors = TopAppBarDefaults.topAppBarColors(
-        containerColor = MaterialTheme.colorScheme.primaryContainer
+        containerColor = MaterialTheme.colorScheme.primary
     )
     CenterAlignedTopAppBar(
         title = {
