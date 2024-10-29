@@ -1,6 +1,7 @@
 package ru.plumsoftware.movie_search.ui.components
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -22,7 +23,9 @@ fun CenterTopAppBar(
     title: String = stringResource(id = R.string.main_screen_title)
 ) {
     val colors = TopAppBarDefaults.topAppBarColors(
-        containerColor = MaterialTheme.colorScheme.primary
+        containerColor = MaterialTheme.colorScheme.primary,
+        titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+        navigationIconContentColor = MaterialTheme.colorScheme.onPrimaryContainer
     )
     CenterAlignedTopAppBar(
         title = {
@@ -38,9 +41,22 @@ fun CenterTopAppBar(
 }
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
-@Preview
+@Preview(showBackground = true, showSystemUi = true, device = "spec:parent=pixel_5",
+    uiMode = Configuration.UI_MODE_NIGHT_NO or Configuration.UI_MODE_TYPE_NORMAL
+)
 @Composable
 private fun CenterTopAppBarPreview() {
+    MovieSearchTheme {
+        Scaffold(topBar = {CenterTopAppBar()}) {}
+    }
+}
+
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
+@Preview(showBackground = true, showSystemUi = true, device = "spec:parent=pixel_5",
+    uiMode = Configuration.UI_MODE_NIGHT_YES or Configuration.UI_MODE_TYPE_NORMAL
+)
+@Composable
+private fun CenterTopAppBarDarkPreview() {
     MovieSearchTheme {
         Scaffold(topBar = {CenterTopAppBar()}) {}
     }
