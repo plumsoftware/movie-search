@@ -6,7 +6,7 @@
 - Kotlin coroutines
 - MVVM
 - Clean architecture
-- Fragment/grafment navigation
+- Fragment/fragment navigation
 - Jetpack Compose
 - Coil
 - Koin
