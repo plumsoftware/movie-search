@@ -16,7 +16,10 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
@@ -50,6 +53,7 @@ class HomeScreenFragment : Fragment() {
     private fun HomeScreenContent(activity: Activity) {
         val homeViewModel: HomeViewModel = koinViewModel()
         val snackbarHostState = remember { SnackbarHostState() }
+        var selectedGenreIndex by remember { mutableStateOf(-1) }
         val state = homeViewModel.state.collectAsState()
         val navController = Navigation.findNavController(activity, R.id.nav_host_fragment)
 
@@ -87,9 +91,11 @@ class HomeScreenFragment : Fragment() {
                     ) {
                         item {
                             GenresList(
-                                onGenreClick = { genre ->
+                                onGenreClick = { genre, index ->
                                     homeViewModel.selectGenre(genre)
-                                }
+                                    selectedGenreIndex = index
+                                },
+                                initialValue = selectedGenreIndex
                             )
                         }
                         item {
