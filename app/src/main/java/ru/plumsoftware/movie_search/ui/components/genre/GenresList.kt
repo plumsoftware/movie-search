@@ -22,7 +22,7 @@ import ru.plumsoftware.movie_search.ui.theme.Extensions
 import ru.plumsoftware.movie_search.ui.theme.MovieSearchTheme
 
 @Composable
-fun GenresList(onGenreClick: (String) -> Unit, initialValue: Int = -1) {
+fun GenresList(onGenreClick: (String, Int) -> Unit, initialValue: Int = -1) {
 
     val genresFromResources = stringArrayResource(R.array.genres)
     var selectedIndex by remember { mutableIntStateOf(initialValue) }
@@ -43,12 +43,12 @@ fun GenresList(onGenreClick: (String) -> Unit, initialValue: Int = -1) {
                 title = item,
                 isSelected = selectedIndex == index,
                 onClick = {
-                    selectedIndex = if (selectedIndex == index && selectedIndex > 0)
+                    selectedIndex = if (selectedIndex == index && selectedIndex >= 0)
                         -1
                     else
                         index
                     val genre = if (selectedIndex == -1) "" else item
-                    onGenreClick.invoke(genre)
+                    onGenreClick.invoke(genre, selectedIndex)
                 }
             )
         }
@@ -61,7 +61,7 @@ fun GenresList(onGenreClick: (String) -> Unit, initialValue: Int = -1) {
 private fun GenresListPreviewLight() {
     MovieSearchTheme {
         Scaffold {
-            GenresList(onGenreClick = {})
+            GenresList(onGenreClick = {_, _ ->})
         }
     }
 }
@@ -72,7 +72,7 @@ private fun GenresListPreviewLight() {
 private fun GenresListPreviewDark() {
     MovieSearchTheme {
         Scaffold {
-            GenresList(onGenreClick = {}, initialValue = 2)
+            GenresList(onGenreClick = {_, _ ->}, initialValue = 2)
         }
     }
 }
@@ -86,7 +86,7 @@ private fun GenresListPreviewDark() {
 private fun GenresListPreviewLandscapeDark() {
     MovieSearchTheme {
         Scaffold {
-            GenresList(onGenreClick = {}, initialValue = 2)
+            GenresList(onGenreClick = {_, _ ->}, initialValue = 2)
         }
     }
 }
